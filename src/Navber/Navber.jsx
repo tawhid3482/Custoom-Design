@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { MdOutlineMenuOpen } from "react-icons/md";
 import { RxCross1 } from "react-icons/rx";
@@ -6,6 +7,8 @@ import Navlinks from "./Navlinks";
 const Navber = () => {
 
   const [openMenu, setMenu] = useState(false);
+const [openDropdown, setOpenDropdown] = useState(false);  //Add this state
+
 //   const { user, isAdmin, logOut } = useState();
 
   const routes = [
@@ -15,27 +18,37 @@ const Navber = () => {
     { path: "contact", name: "Contact" },
     { path: "contact", name: "Contactsss" },
   ];
-  
+
+const toggleDropdown = () => {
+  setOpenDropdown(!openDropdown);
+};
+
+const closeDropdown = () => {
+  setOpenDropdown(false);
+};
+
 
   return (
     <nav className="flex justify-between items-center md:justify-center md:items-center  p-1 bg-gray-200 ">
       <div className="">
 
-      <div className="dropdown  ">
+      <div  onClick={toggleDropdown} className="dropdown  ">
       <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
         <div className="w-10 rounded-full">
           <img alt="Tailwind CSS Navbar component" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
         </div>
       </div>
-      <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
-        <li>
+      <ul tabIndex={0} className={`mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52 ${
+              openDropdown ? "block" : "hidden"
+            }`}>
+        <li onClick={closeDropdown}>
           <a className="justify-between">
             Profile
             <span className="badge">New</span>
           </a>
         </li>
-        <li><a>Settings</a></li>
-        <li><a>Logout</a></li>
+        <li onClick={closeDropdown}><a>Settings</a></li>
+        <li onClick={closeDropdown}><a>Logout</a></li>
       </ul>
     </div>
 

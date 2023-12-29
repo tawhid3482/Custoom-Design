@@ -29,7 +29,7 @@ const closeDropdown = () => {
 
 
   return (
-    <nav className="flex justify-between items-center md:justify-center md:items-center  p-1 bg-gray-200 ">
+    <nav className="flex justify-between items-center md:justify-center md:items-center  p-1 bg-gray-300 ">
       <div className="">
 
       <div  onClick={toggleDropdown} className="dropdown  ">

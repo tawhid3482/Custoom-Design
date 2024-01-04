@@ -13,9 +13,11 @@ const Navber2 = () => {
   ];
   return (
     <nav className="flex items-center justify-between bg-gray-300  p-4  my-5 rounded-lg">
-      <div className="">logo</div>
+      <div className="text-center md:static">logo</div>
       <div className="">
-        <ul className="flex items-center justify-center">
+        <ul className={`md:flex md:static bg-gray-300 absolute px-5
+        ${open ? 'top-16':'hidden'}
+        `}>
           {routes?.map((route) => (
             <RouteLink key={route.id} route={route}>
               {" "}
@@ -29,6 +31,9 @@ const Navber2 = () => {
         ) : (
           <RiMenuSearchLine className="text-3xl"></RiMenuSearchLine>
         )}
+      </div>
+      <div className="">
+        
       </div>
     </nav>
   );

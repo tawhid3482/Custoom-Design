@@ -5,12 +5,21 @@ import { useState } from "react";
 
 const Navber2 = () => {
     const [open, setOpen]=useState(false)
+    const [openDropdown, setOpenDropdown] = useState(false); 
+
   const routes = [
     { id: 1, path: "/", name: "Home" },
     { id: 2, path: "/about", name: "About" },
     { id: 3, path: "/service", name: "Service" },
     { id: 3, path: "/service", name: "2" },
   ];
+  const toggleDropdown = () => {
+    setOpenDropdown(!openDropdown);
+  };
+
+  const closeDropdown = () => {
+    setOpenDropdown(false);
+  };
   return (
     <nav className="flex items-center justify-between bg-gray-300  p-4  my-5 rounded-lg">
       <div className="text-center md:static">logo</div>
@@ -32,7 +41,7 @@ const Navber2 = () => {
           <RiMenuSearchLine className="text-3xl"></RiMenuSearchLine>
         )}
       </div>
-      <div className="">
+      <div onClick={toggleDropdown} className="">
       <div className="dropdown dropdown-end">
       <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
         <div className="w-10 rounded-full">

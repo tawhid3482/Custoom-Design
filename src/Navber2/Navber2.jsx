@@ -23,7 +23,7 @@ const Navber2 = () => {
           ))}
         </ul>
       </div>
-      <div onClick={()=>setOpen(!open)} className="text-3xl">
+      <div onClick={()=>setOpen(!open)} className="text-3xl md:hidden">
         {open === true ? (
           <IoMdClose></IoMdClose>
         ) : (

@@ -4,7 +4,7 @@ import Navber from "../Navber/Navber";
 const MainLayOut = () => {
     return (
         <div>
-            {/* <Navber></Navber> */}
+            <Navber></Navber>
             <Outlet></Outlet>
         </div>
     );

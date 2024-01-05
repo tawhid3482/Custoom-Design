@@ -9,10 +9,10 @@ const Navber = () => {
   
   const routes = [
     { path: "/", name: "Home" },
+    { path: "/navber", name: "Navber" },
     { path: "/about", name: "About" },
-    { path: "project", name: "Projects" },
-    { path: "contact", name: "Contact" },
-    { path: "contact", name: "Contactsss" },
+    { path: "/card", name: "Card" },
+    
   ];
 
   const toggleDropdown = () => {
